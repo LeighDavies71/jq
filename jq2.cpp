@@ -2109,7 +2109,7 @@ JqHandle JqGroupBegin(const char* Name)
 	{
 		JqAttachChild(Parent, H);
 	}
-	JQ_ASSERT(Job.Parent == Parent);
+	JQ_ASSERT(Job.Parent == (Parent % JQ_JOB_BUFFER_SIZE));
 	JQ_CLEAR_FUNCTION(Job.Function);
 	Job.Queue = 0xff;
 	JqSelfPush(H, 0);
